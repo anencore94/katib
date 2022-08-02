@@ -13,9 +13,9 @@ spec:
       - Train-accuracy
   algorithm:
     algorithmName: random
-  parallelTrialCount: 3
-  maxTrialCount: 12
-  maxFailedTrialCount: 3
+  parallelTrialCount: 1
+  maxTrialCount: 1
+  maxFailedTrialCount: 1
   parameters:
     - name: lr
       parameterType: double
@@ -62,4 +62,5 @@ spec:
                   - "--lr=${trialParameters.learningRate}"
                   - "--num-layers=${trialParameters.numberLayers}"
                   - "--optimizer=${trialParameters.optimizer}"
+                  - "--num-epochs=1"
             restartPolicy: Never
